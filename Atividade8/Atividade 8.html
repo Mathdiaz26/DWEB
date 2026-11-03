@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pesquisa de Opinião sobre o Filme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+
+<div class="cortina-topo"></div>
+<div class="cortina esquerda"></div>
+<div class="cortina direita"></div>
+
+<main>
+  <header class="letreiro">
+    <h1>Pesquisa sobre Cara-de-Barro</h1>
+    <p class="sub">Cadastre cada espectador e veja o veredito da plateia</p>
+  </header>
+
+  <section class="card">
+    <h2>Novo espectador</h2>
+    <div class="row">
+      <div class="field">
+        <label for="idade">Idade</label>
+        <input id="idade" type="number" min="1" max="120" placeholder="Ex.: 25">
+      </div>
+      <div class="field">
+        <label for="sexo">Sexo</label>
+        <select id="sexo">
+          <option value="">Selecione...</option>
+          <option value="F">Feminino</option>
+          <option value="M">Masculino</option>
+          <option value="O">Outro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="opiniao">Opinião sobre o filme</label>
+        <select id="opiniao">
+          <option value="">Selecione...</option>
+          <option value="1">1 - Péssimo</option>
+          <option value="2">2 - Regular</option>
+          <option value="3">3 - Bom</option>
+          <option value="4">4 - Ótimo</option>
+        </select>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btnAdd">Adicionar</button>
+      <button id="btnLimpar" class="sec">Limpar tudo</button>
+    </div>
+    <div id="erro" role="alert"></div>
+  </section>
+
+  <section class="card">
+    <h2>Veredito da plateia</h2>
+    <div id="resultados"></div>
+  </section>
+
+  <section class="card">
+    <h2>Registro de espectadores</h2>
+    <div class="scroll" id="lista"></div>
+  </section>
+</main>
+
+<script src="Logica.js"></script>
+</body>
+</html>

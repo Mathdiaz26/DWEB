@@ -1,0 +1,229 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 64px clamp(34px, 9vw, 130px) 40px;
+  background: radial-gradient(ellipse at top, #3a0d12 0%, #1a0509 55%, #0c0205 100%);
+  color: #f3e6c4;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Cortinas ---------- */
+.cortina {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(24px, 7vw, 110px);
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    #5c0a14 0px, #8a1424 14px, #4a0710 28px, #7a1020 42px
+  );
+}
+.cortina.esquerda {
+  left: 0;
+  border-right: 3px solid #c9a24b;
+  box-shadow: inset -14px 0 20px rgba(0, 0, 0, .55), 6px 0 14px rgba(0, 0, 0, .7);
+}
+.cortina.direita {
+  right: 0;
+  border-left: 3px solid #c9a24b;
+  box-shadow: inset 14px 0 20px rgba(0, 0, 0, .55), -6px 0 14px rgba(0, 0, 0, .7);
+}
+
+.cortina-topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  z-index: 3;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    #5c0a14 0px, #8a1424 14px, #4a0710 28px, #7a1020 42px
+  );
+  border-bottom: 4px solid #c9a24b;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .7);
+}
+.cortina-topo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 16px;
+  background: radial-gradient(circle at 20px 0, #6b0d19 19px, transparent 20px) 0 0 / 40px 16px repeat-x;
+}
+
+/* ---------- Letreiro ---------- */
+.letreiro {
+  position: relative;
+  text-align: center;
+  padding: 26px 20px 22px;
+  margin-bottom: 26px;
+  background: #1a0508;
+  border: 4px solid #c9a24b;
+  border-radius: 6px;
+  box-shadow: 0 0 22px rgba(255, 200, 90, .35), inset 0 0 30px rgba(0, 0, 0, .8);
+}
+.letreiro::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 6px dotted #ffd978;
+  border-radius: 4px;
+  pointer-events: none;
+  animation: piscar 2.4s ease-in-out infinite;
+}
+h1 {
+  margin: 0 0 6px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffd978;
+  text-shadow: 0 0 10px rgba(255, 200, 90, .7);
+}
+p.sub {
+  margin: 0;
+  font-style: italic;
+  color: #e6cf99;
+}
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .letreiro::before { animation: none; }
+}
+
+/* ---------- Cartões (papel envelhecido) ---------- */
+.card {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 22px;
+  color: #2a1a10;
+  background: linear-gradient(#f3e6c4, #e6d4a3);
+  border: 2px solid #c9a24b;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #7a5a1c;
+  pointer-events: none;
+}
+h2 {
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b0d19;
+  border-bottom: 2px double #a8842f;
+}
+
+/* ---------- Formulário ---------- */
+.row { display: flex; gap: 14px; flex-wrap: wrap; }
+.field { flex: 1 1 160px; display: flex; flex-direction: column; gap: 5px; }
+label {
+  font-size: .8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5a4326;
+}
+input, select {
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #2a1a10;
+  background: #fbf3dc;
+  border: 1px solid #8a6a2c;
+  border-radius: 3px;
+}
+input:focus, select:focus {
+  outline: 2px solid #8a1424;
+  outline-offset: 1px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f3d98b;
+  background: linear-gradient(#8a1424, #5c0a14);
+  border: 2px solid #c9a24b;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+button:hover { filter: brightness(1.25); }
+button.sec {
+  color: #5c0a14;
+  background: transparent;
+  border-color: #8a6a2c;
+  box-shadow: none;
+}
+.actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+#erro {
+  min-height: 1.2em;
+  margin-top: 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #8a1010;
+}
+
+/* ---------- Resultados (ingressos) ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+.stat {
+  padding: 12px 14px;
+  background: #fbf3dc;
+  border: 2px dashed #8a6a2c;
+  border-left: 8px solid #8a1424;
+  border-radius: 4px;
+}
+.stat span {
+  display: block;
+  font-size: .72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #5a4326;
+}
+.stat strong {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.45rem;
+  color: #6b0d19;
+}
+
+/* ---------- Tabela ---------- */
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px dashed #a8842f; }
+th {
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: #6b0d19;
+}
+.vazio { font-style: italic; color: #5a4326; }
