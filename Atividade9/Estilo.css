@@ -1,0 +1,103 @@
+:root {
+  --verde: #00ff41;
+  --verde-escuro: #008f11;
+  --preto: #000000;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--preto);
+  color: var(--verde);
+  margin: 0;
+  padding: 24px 16px;
+}
+#chuva {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+main { max-width: 640px; margin: 0 auto; }
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  color: var(--verde);
+  text-shadow: 0 0 8px var(--verde);
+}
+
+p.sub { margin-top: 0; color: var(--verde-escuro); }
+
+section {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--verde);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.35);
+}
+
+h2 { font-size: 1.05rem; margin: 0 0 12px; }
+
+input {
+  padding: 8px;
+  margin: 0 6px 8px 0;
+  background: var(--preto);
+  color: var(--verde);
+  border: 1px solid var(--verde-escuro);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  color-scheme: dark;
+}
+input::placeholder { color: var(--verde-escuro); }
+input[type="number"] { width: 90px; }
+input[type="text"] { width: 200px; }
+
+button {
+  padding: 9px 16px;
+  background: var(--preto);
+  color: var(--verde);
+  border: 1px solid var(--verde);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--verde);
+  color: var(--preto);
+  box-shadow: 0 0 10px var(--verde);
+}
+button:focus-visible, input:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+nav {display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px; }
+nav button { background: rgba(0, 0, 0, 0.8);
+}
+nav button.ativo {
+  background: var(--verde);
+  color: var(--preto);
+  box-shadow: 0 0 10px var(--verde);
+}
+
+.painel {display: none;
+}
+.painel.ativo {display: block;
+}
+
+.resultado {
+  margin: 12px 0 0;
+  font-weight: bold;
+  min-height: 1.2em;
+  text-shadow: 0 0 6px var(--verde);
+}
+.resultado::before {content: "> ";
+}

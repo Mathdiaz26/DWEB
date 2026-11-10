@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atividade 9</title>
+  <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+  <main>
+    <h1>Atividade 9 - Funções</h1>
+    <p class="sub">JavaScript em arquivo externo (atividade9.js)</p>
+
+    <nav aria-label="Escolha a função">
+      <button id="menu1" onclick="mostrarOperacao(1)" aria-pressed="false">Função 1</button>
+      <button id="menu2" onclick="mostrarOperacao(2)" aria-pressed="false">Função 2</button>
+      <button id="menu3" onclick="mostrarOperacao(3)" aria-pressed="false">Função 3</button>
+      <button id="menu4" onclick="mostrarOperacao(4)" aria-pressed="false">Função 4</button>
+      <button id="menu5" onclick="mostrarOperacao(5)" aria-pressed="false">Função 5</button>
+    </nav>
+
+    <section class="painel" id="painel1">
+      <h2>1) Maior de três números</h2>
+      <input type="number" id="n1a" placeholder="Nº 1">
+      <input type="number" id="n1b" placeholder="Nº 2">
+      <input type="number" id="n1c" placeholder="Nº 3">
+      <br>
+      <button onclick="funcao1()">Descobrir o maior</button>
+      <p class="resultado" id="r1"></p>
+    </section>
+
+    <section class="painel" id="painel2">
+      <h2>2) Três números em ordem crescente</h2>
+      <input type="number" id="n2a" placeholder="Nº 1">
+      <input type="number" id="n2b" placeholder="Nº 2">
+      <input type="number" id="n2c" placeholder="Nº 3">
+      <br>
+      <button onclick="funcao2()">Ordenar</button>
+      <p class="resultado" id="r2"></p>
+    </section>
+
+    <section class="painel" id="painel3">
+      <h2>3) Palíndromo</h2>
+      <input type="text" id="texto3" placeholder="Ex.: Socorram me subi no onibus em Marrocos">
+      <br>
+      <button onclick="funcao3()">Verificar</button>
+      <p class="resultado" id="r3"></p>
+    </section>
+
+    <section class="painel" id="painel4">
+      <h2>4) Subconjunto de palavras</h2>
+      <input type="text" id="p1" placeholder="1ª palavra (ex.: programação)">
+      <input type="text" id="p2" placeholder="2ª palavra (ex.: programa)">
+      <br>
+      <button onclick="funcao4()">Verificar</button>
+      <p class="resultado" id="r4"></p>
+    </section>
+
+    <section class="painel" id="painel5">
+      <h2>5) Dia da semana</h2>
+      <input type="date" id="data5">
+      <br>
+      <button onclick="funcao5()">Descobrir o dia</button>
+      <p class="resultado" id="r5"></p>
+    </section>
+  </main>
+
+  <script src="atividade9.js"></script>
+</body>
+</html>
